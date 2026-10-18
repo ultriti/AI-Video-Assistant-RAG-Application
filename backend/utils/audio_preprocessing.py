@@ -1,18 +1,3 @@
-# import yt_dlp
-
-# def download_audio(url, out_dir="downloads"):
-#     opts = {
-#         "format": "bestaudio/best",
-#         "outtmpl": f"{out_dir}/%(title)s.%(ext)s",
-#         "postprocessors": [{
-#             "key": "FFmpegExtractAudio",
-#             "preferredcodec": "wav",
-#         }],
-#     }
-#     with yt_dlp.YoutubeDL(opts) as ydl:
-#         info = ydl.extract_info(url, download=True)
-#         return ydl.prepare_filename(info).rsplit(".", 1)[0] + ".wav"
-
 import os
 from dotenv import load_dotenv
 import yt_dlp
@@ -28,7 +13,6 @@ os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
 # -----------------------
 # convert yotube link video to mp3/wav
-
 def download_youtube_audio(url:str) -> str:
 
     opts = {
@@ -54,7 +38,6 @@ def download_youtube_audio(url:str) -> str:
 
 # -----------------------------
 # convert extracted auto to [ mono , 16khz ]
-
 def convert_to_wav(input_path: str) -> str:
     """Convert any audio/video file to mono, 16 kHz WAV (ideal for Whisper)."""
     output_path = os.path.splitext(input_path)[0] + "_converted.wav"
@@ -71,7 +54,6 @@ def convert_to_wav(input_path: str) -> str:
 
 # -------------------------------------
 # audio chunking
-
 def chunk_audio(wav_path:str,chunk_min:int = 10)->list:
     
     audio = AudioSegment.from_wav(wav_path)
