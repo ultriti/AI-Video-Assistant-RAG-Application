@@ -56,3 +56,30 @@ Accepts any audio/video source and converts it to WAV chunks ready for Whisper.
 
 -- convert audio to mono audio 
 -- and set aiduo to 16khz
+
+
+
+# Phase 1 — Step 2: AI Transcription
+
+**File:** `core/transcriber.py`
+
+## Purpose
+
+Runs OpenAI Whisper locally to convert audio chunks into text.
+
+## What This File Does
+
+- Loads the Whisper model once into memory (tiny / small / medium / large)
+- Transcribes each audio chunk one by one
+- Supports translate mode — converts Hindi speech directly to English text
+- Combines all chunk transcripts into one single clean transcript
+- Model size is configurable via `.env` — balances speed vs accuracy
+
+## Input → Output
+
+| Type | Description |
+|------|-------------|
+| **IN** | List of WAV audio chunk paths |
+| **IN** | Language mode (english / hindi) |
+| **OUT** | Full meeting transcript as text |
+| **OUT** | Optional: translated English text |

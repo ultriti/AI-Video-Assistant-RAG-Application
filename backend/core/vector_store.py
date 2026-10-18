@@ -19,7 +19,7 @@ EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 # ---------------------------------
 # get embeddings from model
 def get_embedding():
-    return HuggingFaceEmbeddings(model=EMBEDDING_MODEL, model_kwargs={"device": "cpu"})
+    return HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL, model_kwargs={"device": "cpu"})
 
 
 # ---------------------------
@@ -39,13 +39,13 @@ def build_vector_store(transcript: str) -> Chroma:
 
     embeddings = get_embedding()
     vector_store = Chroma.from_documents(
-        document=docs,
-        embeddings=embeddings,
-        collection_names=COLLECTION_NAME,
+        documents=docs,
+        embedding=embeddings,
+        collection_name=COLLECTION_NAME,   # singular
         persist_directory=CHROMA_DB,
     )
 
-    result = vector_store
+    return vector_store
 
 
 # -----------------------------------

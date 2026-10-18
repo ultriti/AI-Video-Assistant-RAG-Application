@@ -16,9 +16,9 @@ from dotenv import load_dotenv
 
 # models
 def get_llm():
-    # gemini_model = ChatGoogleGenerativeAI(model="gemini-3.5-flash-lite", temperature=0)
-    groq_model = ChatGroq(model="openai/gpt-oss-20b", temperature=0.2)
-    return groq_model
+    gemini_model = ChatGoogleGenerativeAI(model="gemini-3.5-flash-lite", temperature=0)
+    # groq_model = ChatGroq(model="openai/gpt-oss-20b", temperature=0.2)
+    return gemini_model
 
 
 # -------------------------
