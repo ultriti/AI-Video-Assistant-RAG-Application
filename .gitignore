@@ -1,0 +1,208 @@
+# ------------
+# Python
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+.eggs/
+
+# --------------------
+# Virtual Environments
+
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# --------------------
+# Environment Variables & Secrets
+# --------------------
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+secrets/
+credentials/
+secrets.json
+
+# --------------------
+# Jupyter Notebook
+
+# .ipynb_checkpoints/
+# */.ipynb_checkpoints/
+# *.ipynb
+
+# --------------------
+# Machine Learning Models
+
+models/
+model/
+artifacts/
+checkpoints/
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.keras
+*.onnx
+*.pt
+*.pth
+*.safetensors
+*.model
+*.weights
+
+# --------------------
+# Datasets & Generated Data
+
+data/raw/
+data/processed/
+data/external/
+datasets/
+*.parquet
+*.feather
+*.arrow
+*.sqlite
+*.db
+
+# Generated reports and predictions
+customer_uplift_scores.csv
+training_summary.json
+predictions.csv
+predictions.json
+results/
+reports/generated/
+
+# --------------------
+# Training Logs & Experiments
+
+logs/
+*.log
+tensorboard/
+runs/
+mlruns/
+wandb/
+lightning_logs/
+checkpoints/
+
+# --------------------
+# Python Testing & Coverage
+
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+nosetests.xml
+test-results/
+
+# --------------------
+# Type Checking & Linters
+
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+.hypothesis/
+
+# --------------------
+# IDEs & Editors
+
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# --------------------
+# Operating Systems
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+._*
+
+# --------------------
+# Node.js / React / Vite
+
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Frontend builds
+dist/
+build/
+.next/
+.nuxt/
+.output/
+.vite/
+coverage/
+
+# Package managers
+.npm/
+.yarn/*
+!.yarn/patches/
+!.yarn/plugins/
+!.yarn/releases/
+!.yarn/versions/
+.pnpm-store/
+
+# Frontend environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# --------------------
+# FastAPI / Uvicorn
+
+uvicorn.log
+fastapi.log
+
+# --------------------
+# Temporary Files
+
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+
+# --------------------
+# Deployment & Containers
+
+*.tar
+*.tar.gz
+
+# --------------------
+# Local configuration
+
+config.local.*
+settings.local.*
