@@ -57,7 +57,7 @@ def load_vector_store() -> Chroma:
 
     vector_store = Chroma(
         collection_name=COLLECTION_NAME,
-        embedding_funtion=embeddings,
+        embedding_function=embeddings,
         persist_directory=CHROMA_DB,
     )
 
