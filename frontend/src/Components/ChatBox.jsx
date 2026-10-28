@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Send } from 'lucide-react'
+import MarkdownContent from './MarkdownContent'
 
 const API_URL = 'http://localhost:8000'
 
@@ -23,7 +24,7 @@ const ChatBox = ({ sessionId }) => {
     setLoading(true)
 
     try {
-      const res = await fetch(`${API_URL}/api/chat`, {
+      const res = await fetch(`${API_URL}/api/v1/process/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ session_id: sessionId, question }),
@@ -63,15 +64,16 @@ const ChatBox = ({ sessionId }) => {
                     <span className="px-1 text-[10px] font-semibold uppercase tracking-wider text-slate-500">
                       {isUser ? 'You' : 'AI'}
                     </span>
-                    <div
-                      className={`rounded-2xl px-4 py-2.5 text-sm leading-relaxed whitespace-pre-wrap ${
-                        isUser
-                          ? 'rounded-br-md bg-indigo-500 text-white'
-                          : 'rounded-bl-md border border-slate-700 bg-slate-800 text-slate-200'
-                      }`}
-                    >
-                      {m.text}
-                    </div>
+                    {isUser ? (
+                      <div className="rounded-2xl rounded-br-md bg-indigo-500 px-4 py-2.5 text-sm leading-relaxed whitespace-pre-wrap text-white">
+                        {m.text}
+                      </div>
+                    ) : (
+                      <MarkdownContent
+                        className="max-w-full rounded-2xl rounded-bl-md border border-slate-700 bg-slate-800 px-4 py-2.5 text-sm leading-relaxed text-slate-200"
+                        content={m.text}
+                      />
+                    )}
                   </div>
                 </div>
               )

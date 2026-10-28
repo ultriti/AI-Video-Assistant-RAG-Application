@@ -1,4 +1,5 @@
 import { ChevronRight, FileText, ListChecks, MessageSquareText, Pin, CircleHelp } from 'lucide-react'
+import MarkdownContent from './MarkdownContent'
 
 const ResultTabs = ({ result }) => {
   return (
@@ -47,9 +48,10 @@ const ResultCard = ({ title, icon: Icon, content, accent = 'violet', className =
         <Icon size={14} className={accent === 'emerald' ? 'text-emerald-300' : accent === 'cyan' ? 'text-cyan-300' : 'text-violet-300'} />
         {title}
       </h3>
-      <div className="mt-3 max-h-[27rem] overflow-y-auto text-sm leading-6 whitespace-pre-wrap text-slate-300">
-        {content || `No ${title.toLowerCase()} found.`}
-      </div>
+      <MarkdownContent
+        className="mt-3 max-h-[27rem] overflow-y-auto text-sm leading-6 text-slate-300"
+        content={content || `No ${title.toLowerCase()} found.`}
+      />
     </section>
   )
 }

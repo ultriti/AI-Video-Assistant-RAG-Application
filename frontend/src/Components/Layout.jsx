@@ -17,7 +17,7 @@ const Layout = () => {
     setLoading(true)
     setError('')
     try {
-      const res = await fetch(`${API_URL}/api/process`, {
+      const res = await fetch(`${API_URL}/api/v1/process/pipeline`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ source, language }),
