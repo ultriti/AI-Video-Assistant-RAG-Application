@@ -1,4 +1,41 @@
-# AI Video Assistant — Project Documentation
+# AI Video Assistant — Public Project Documentation
+
+Turn a meeting recording or YouTube video into a transcript, structured meeting
+notes (summary, action items, decisions, open questions), and a chat interface
+that answers questions grounded in the transcript.
+
+**Stack:** React, FastAPI, Whisper, Gemini, LangChain, ChromaDB
+
+## About this repository
+This repo contains the core workflow: audio processing, transcription, note
+extraction, RAG chat, and a React frontend. Sessions are held in memory and
+history is stored in the browser (see Limitations).
+
+
+## Extended version Production-Ready Application
+
+A full production-ready implementation of this project is also available. It includes secure JWT-based authentication, PostgreSQL data persistence, Redis-powered rate limiting, user account management, session history, transcript-based RAG chat, scalable FastAPI services, and deployment-ready infrastructure designed for real-world usage and production environments.
+
+>
+> TransVerse is a full-stack AI-powered meeting intelligence platform built with React, FastAPI, PostgreSQL, Redis, Whisper, Gemini, LangChain, and ChromaDB.
+>
+> The application includes secure JWT-based authentication, persistent user session management, transcript-based RAG chat, PostgreSQL-backed storage, API rate limiting, environment-based configuration, and a modular architecture designed for real-world deployment and scalability.
+>
+
+> This repository focuses on the AI Video Assistant core workflow and documentation. A separate **production-ready implementation** is also available, featuring:
+>
+> - Secure JWT Authentication & Authorization
+> - PostgreSQL Database Integration
+> - Persistent Session & Chat History
+> - Redis-Based Rate Limiting
+> - User Account Management
+> - Retrieval-Augmented Generation (RAG) Chat
+> - Scalable FastAPI Backend Architecture
+> - React Frontend with Modern UI
+> - Production Configuration & Deployment Support
+> - Modular Full-Stack Project Structure
+>
+> The production version is designed for real-world deployment with user management, secure API access, database persistence, monitoring, and scalable system architecture.
 
 ## 1. Introduction
 
